@@ -5,12 +5,12 @@
 - A idade do homem mais velho e da mulher mais nova.*/
 
 $maioraltura = 0;
-$menoraltura = 0;
+$menoraltura = 3.4;
 $somaalturamuie = 0;
 $totalmuies = 0;
 $totalmachos= 0;
 $maisveio = 0;
-$maisnova = 0;
+$maisnova = 200;
 
 // randoms para substituir inputs
 function sexo_random() {
@@ -37,7 +37,7 @@ function define_maior_altura($altura, $maioraltura) {
 
 
 function define_menor_altura($altura, $menoraltura) {
-    if ($altura > $menoraltura){
+    if ($altura < $menoraltura){
         $menoraltura = $altura;
     }
     return ($menoraltura);
@@ -68,7 +68,7 @@ function define_mulher_mais_nova($idade, $maisnova) {
 // estrutura de repetição para gerar 50 randoms
 $cont = 0;
 echo "<b>Dados recebidos: </b>";
-while ($cont <= 50) {
+while ($cont < 50) {
     $cont++;
     $altura = altura_random();
     $idade = idade_random();
@@ -104,7 +104,7 @@ $mediaAlturaMulheres = calcula_media_altura_muie($somaalturamuie, $totalmuies);
 echo "<br><br> <b>Especificando parametros: </b>";
 echo "<br> Maior altura: " . $maioraltura . "metros <br>";
 echo "Menor altura: " . $menoraltura . "metros <br>";
-echo "Média de altura das mulheres: " . $mediaAlturaMulheres . "metros <br>";
+echo "Média de altura das mulheres: " . round($mediaAlturaMulheres, 2) . "metros <br>";
 echo "Idade do homem mais velho: " . $maisveio  . " anos <br>"; 
 echo "Idade da mulher mais nova: " . $maisnova  . " anos <br>";
 echo "Total de mulheres: " . $totalmuies  . "<br>";
